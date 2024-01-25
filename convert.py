@@ -47,7 +47,8 @@ for root, dirs, files in os.walk("data",topdown=False):
                     code = xk_dict[word][0]
                 else:
                     code = ""
-                    for word_s in ltp.pipeline(word,tasks="cws").cws:
+                    find = True
+                    for word_s in ltp.pipeline(word,tasks=["cws"]).cws:
                         if word_s in xk_dict:
                             code += xk_dict[word_s][0]
                         else:
@@ -56,7 +57,10 @@ for root, dirs, files in os.walk("data",topdown=False):
                                     code += xk_dict[char_s][0]
                                 else:
                                     print(char_s + " not in dict")
-
+                                    find = False
+                                    break
+                    if find == False:
+                        continue
                 prev_char = None
                 for char in code:
                     if char not in one_gram:

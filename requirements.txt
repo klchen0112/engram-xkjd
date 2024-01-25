@@ -1,2 +1,5 @@
-jieba
-paddlepaddle-tiny
+torch
+transformers
+ltp
+ltp-core
+ltp-extension

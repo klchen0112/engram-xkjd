@@ -3,3 +3,10 @@ transformers
 ltp
 ltp-core
 ltp-extension
+xlrd
+sympy
+matplotlib
+seaborn
+notebook
+pyvis
+scipy
